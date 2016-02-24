@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     <!-- Favicon -->
+    <!-- Generated from http://www.favicon-generator.org/ -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
@@ -29,56 +31,12 @@
     <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <script type ="text/javascript" src ="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
-    <!-- Optional theme -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <style>
-      body {
-        font-family: "palatino linotype","Helvetica Neue",Helvetica,Arial,sans-serif;
-        /* background-image:url(gates.jpg); */
-      }
-      h1 {
-	       font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", "Arial", "sans-serif";
-	       color: white;
-	       margin-left: auto;
-	       margin-right: auto;
-         text-transform: uppercase;
-         width: 66%;
-       }
-       h3, label, button {
-         font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", "Arial", "sans-serif";
-       }
-    </style>
-    <title>ChanceMe - college admissions predictions</title>
-    <script>
-      // From http://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
-      function populateSelect(target, min, max, inc){
-      if (!target){
-          return false;
-      }
-      else {
-          var min = min || 0,
-              max = max || min + 100,
-              inc = inc || 1;
-
-          select = document.getElementById(target);
-
-          for (var i = min; i<=max; i += inc){
-              var opt = document.createElement('option');
-              opt.value = i;
-              opt.innerHTML = i;
-              select.appendChild(opt);
-          }
-        }
-      }
-      $(document).ready(function() {
-        populateSelect('sat',600,2400,10);
-        populateSelect('act',1,36);
-        populateSelect('apnum',0,10);
-        populateSelect('sat2ave',0,10);
-      });
-    </script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/chanceme.css">
+    <title>ChanceMe - College Admissions Predictions</title>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -103,7 +61,7 @@
             </div>
         </div>
     </nav>
-    <h1><small>Learn Your Chances of Getting into an Elite College</small></h1>
+    <h1>Learn Your Chances of Getting into an Elite College</h1>
 
     <div class="container">
       <div class="row">
@@ -115,6 +73,10 @@
             probabilities of being accepted at an elite school.
             <a href="howitworks.html">Learn more</a>
           </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12">
           <div class="panel panel-primary col-md-offset-2 col-md-8 col-xs-offset-2 col-xs-10">
             <div class="panel-heading">
               <h3 class="panel-title">Try it now</h3>
@@ -292,10 +254,11 @@
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Use jQuery from CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/chanceme.js"></script>
   </body>
 </html>
