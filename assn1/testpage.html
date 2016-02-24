@@ -8,30 +8,6 @@
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
-  <!-- Favicon -->
-  <!-- Generated from http://www.favicon-generator.org/ -->
-  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="favicons/manifest.json">
-  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
-  <meta name="msapplication-config" content="favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/chanceme.css">
   <title>Test page</title>
@@ -68,11 +44,12 @@
   </nav>
 -->
 
-  <div class="container">
+  <div class="wrapper">
     <div class="row">
-      <div class="col-6">
-        <h1>Headline goes here</h1>
-      </div>
+      <header class="col-6">
+        <h1>Header goes here</h1>
+      </header>
+    </div>
     <!-- 6x1 columns -->
     <div class="row">
       <div class="col-1">
@@ -149,10 +126,10 @@
     <!-- 2 + 4 columns -->
     <div class="row">
       <div class="col-2">
-        4 columns
+        2 columns
       </div>
       <div class="col-4">
-        2 columns
+        4 columns
       </div>
     </div>
     <!-- 5 + 1 columns -->
@@ -167,10 +144,10 @@
     <!-- 1 + 5 columns -->
     <div class="row">
       <div class="col-1">
-        1 columns
+        1 column
       </div>
       <div class="col-5">
-        5 column
+        5 columns
       </div>
     </div>
     <!-- 6 columns -->
@@ -179,11 +156,55 @@
         6 columns
       </div>
     </div>
+    <!-- 1, 4, 1 columns -->
+    <div class="row">
+      <div class="col-1">
+        1 column
+      </div>
+      <div class="col-4">
+        4 columns
+      </div>
+      <div class="col-1">
+        1 column
+      </div>
+    </div>
+    <!-- 1, 2, 2, 1 columns -->
+    <div class="row">
+      <div class="col-1">
+        1 column
+      </div>
+      <div class="col-2">
+        2 columns
+      </div>
+      <div class="col-2">
+        2 columns
+      </div>
+      <div class="col-1">
+        1 column
+      </div>
+    </div>
+    <!-- offset 1, 5 columns -->
+    <div class="row">
+      <div class="col-offset-1 col-5">
+        Offset 1, 5 columns
+      </div>
+    </div>
+    <!-- offset 2, 4 columns -->
+    <div class="row">
+      <div class="col-offset-2 col-4">
+        Offset 2, 4 columns
+      </div>
+    </div>
+    <!-- offset 3, 3 columns -->
+    <div class="row">
+      <div class="col-offset-3 col-3">
+        Offset 3, 3 columns
+      </div>
+    </div>
   </div>
 
   <!-- Use jQuery from CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
   <script src="js/chanceme.js"></script>
 </body>
 

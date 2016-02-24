@@ -1,16 +1,18 @@
-// From http://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
+"use strict";
 
+// From http://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript
 // Populate drop downs with a set of values
 function populateSelect(target, min, max, inc){
-if (!target){
+  if (!target){
     return false;
-}
-else {
+  }
+  else {
     var min = min || 0,
         max = max || min + 100,
         inc = inc || 1;
 
-    select = document.getElementById(target);
+    var select = document.getElementById(target);
+    if (select === null) return;
 
     for (var i = min; i<=max; i += inc){
         var opt = document.createElement('option');
@@ -20,6 +22,7 @@ else {
     }
   }
 }
+
 $(document).ready(function() {
   populateSelect('sat',600,2400,10);
   populateSelect('act',1,36);
