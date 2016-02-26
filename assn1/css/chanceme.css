@@ -66,8 +66,7 @@ footer {
 
 /*** Panel ***/
 .panel {
-  border-style : inset;
-  border-width: thin;
+  font-size: 0.9em;
 }
 
 .panel-heading {
@@ -83,11 +82,32 @@ footer {
 }
 
 .panel-footer {
-  background-color: crimson;
   text-align: center;
-  margin: 0;
+  margin-top: 1em;
   padding: 0.25em;
 }
+
+.panel .fieldset {
+  margin-bottom: 0.7em;
+}
+
+.panel label {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.5em;
+}
+
+.panel li {
+  list-style: none;
+}
+
+.panel li::after {
+    content:"";
+    display: table;
+    clear:both;
+}
+
+
 
 /*** Navigation ***/
 nav {
