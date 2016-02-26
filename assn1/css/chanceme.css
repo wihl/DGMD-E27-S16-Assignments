@@ -52,16 +52,54 @@ div.col-1 img {
   max-width: 225px;
   width: 100%;
 }
-main img {
-  margin-right: 1.875em;
-  float: left;
+.wrapper img {
+  max-width: auto;
+  width: auto;
+  height: auto;
+  display: block;
+/*  margin-right: 1.875em;
+  float: left; */
 }
+
+/* For non-"picture" images */
+.wrapper .img-responsive {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 footer {
   clear: both;
   padding: 2em 0;
   margin: 3em 0;
   color: #999;
   text-align: center;
+}
+
+/*** Panel ***/
+.panel {
+  border-style : inset;
+  border-width: thin;
+}
+
+.panel-heading {
+  background-color: black;
+}
+
+.panel-title {
+  color:white;
+  text-align: center;
+  margin: 0;
+  padding: 1em;
+  background-color: black;
+}
+
+.panel-footer {
+  background-color: crimson;
+  text-align: center;
+  margin: 0;
+  padding: 0.25em;
 }
 
 /*** Navigation ***/
@@ -138,8 +176,8 @@ nav ul a:hover {
     float: none;
     margin-left: 0;
   }
-  [class*='col-offset']{
-    margin-left: 0;
+  .col-4-6 {
+    width: 100%;
   }
 }
 
@@ -163,6 +201,16 @@ nav ul a:hover {
   .col-offset-3 {
     margin-left: 4%
   }
+  .col-4-6 {
+    width: 92%;
+  }
+}
+
+@media only screen and
+  (min-width: 768px)  {
+    .col-4-6 {
+      width: 60%;
+    }
 }
 
 /*** Headers ***/
@@ -171,7 +219,7 @@ header h1 {
   color: white;
 }
 /* Small header */
-@media only screen and (max-width: 766px)  {
+@media only screen and (max-width: 479px)  {
   header {
     background: url(../img/gates-sm.jpg) no-repeat;
     width: 100%;
@@ -184,7 +232,7 @@ header h1 {
 }
 
 /* Large header */
-@media only screen and (min-width: 767px)  {
+@media only screen and (min-width: 480px)  {
   header {
     background: url(../img/gates-lg.jpg) no-repeat;
     height: 12em;
