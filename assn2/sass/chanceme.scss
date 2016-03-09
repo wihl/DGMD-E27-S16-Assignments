@@ -3,11 +3,14 @@
 /* Sass Variables */
 $smallPixelMax: 479px;
 $mediumPixelMax: 767px;
+$safeFonts: Arial,sans-serif;
 
 /* Geometry Calculation in Sass */
 $numColumns: 6;
 
 // TODO: create function to determine column widths
+
+// TODO: use opaque or transparent colors
 
 /*** Main Styles ***/
 html {
@@ -20,11 +23,11 @@ html {
 
 body {
   font-size: 100%;
-  font-family: "palatino linotype","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "palatino linotype","Helvetica Neue",Helvetica,$safeFonts;
 }
 
 h1 {
-  font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", "Arial", "sans-serif";
+  font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", $safeFonts;
   color: black;
   margin-left: auto;
   margin-right: auto;
@@ -50,18 +53,22 @@ h3 {
   margin-bottom: 0;
 }
 
-.wrapper img {
-  width: auto;
-  height: auto;
-  display: block;
-}
+.wrapper {
 
-/* For non-"picture" images */
-.wrapper .img-responsive {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
+  img {
+    height: auto;
+    display: block;
+    width: auto;
+    display: block;
+  }
+
+  /* For non-"picture" images */
+  .img-responsive {
+    height: auto;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 footer {
