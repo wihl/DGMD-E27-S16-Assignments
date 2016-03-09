@@ -73,24 +73,6 @@ footer {
   font-size: 0.9em;
 }
 
-.panel-heading {
-  background-color: black;
-}
-
-.panel-title {
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 1em;
-  background-color: black;
-}
-
-.panel-footer {
-  text-align: center;
-  margin-top: 1em;
-  padding: 0.25em;
-}
-
 .panel .fieldset {
   margin-bottom: 0.7em;
 }
@@ -111,10 +93,28 @@ footer {
   clear: both;
 }
 
+.panel-heading {
+  background-color: black;
+}
+
+.panel-title {
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 1em;
+  background-color: black;
+}
+
+.panel-footer {
+  text-align: center;
+  margin-top: 1em;
+  padding: 0.25em;
+}
+
 /*** Navigation ***/
 nav {
   background-color: darkred;
-  font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", "Arial", "sans-serif";
+  font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", Arial, sans-serif;
 }
 
 nav ul {
