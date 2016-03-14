@@ -1,0 +1,42 @@
+
+
+/* YOUR CSS STYLES */
+.country {
+  fill: #e1a95f; /* Earth yellow. Ref: http://www.colorhexa.com/e1a95f */
+  stroke: tan;
+  stroke-width: 0.5px;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+h4 {
+  padding-top: 20px;
+}
+
+/* Font source: 1001fonts.com. See EULA in fonts directory */
+@font-face {
+  font-family: 'canterbury';
+  src: url('../fonts/Canterbury.ttf');
+}
+
+.masthead {
+  font-family: canterbury, sans-serif;
+  font-size: 3em;
+  text-align: center;
+  border-bottom:black;
+  border-style: none none solid none;
+  border-width: 1px;
+}
