@@ -1,35 +1,11 @@
 /* DGMD E27, Assignment 2, David Wihl */
 
-/* Sass Variables */
-$smallPixelMax: 479px;
-$mediumPixelMax: 767px;
-$safeFonts: Arial,sans-serif;
-
-/* Geometry Calculation in Sass */
-$numColumns: 6;
-
-/* Mixins */
-@mixin img-defaults {
-  height: auto;
-  display: block;
-}
-
-@mixin row-after {
-  content:"";
-  display: table;
-  clear:both;
-}
-
-/* Extend only class */
-%heading-fonts {
-  font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", $safeFonts;
-}
+@import "chanceme/variables";
+@import "chanceme/mixins";
 
 // TODO: create function to determine column widths
 
 // TODO: use opaque or transparent colors
-
-// TODO: use if/else
 
 /*** Main Styles ***/
 html {
@@ -77,14 +53,11 @@ h3 {
   // Nesting - 1 level
   img {
     @include img-defaults;
-    width: auto;
   }
 
   /* For non-"picture" images */
   .img-responsive {
-    @include img-defaults;
-    max-width: 100%;
-    width: 100%;
+    @include img-defaults(responsive);
   }
 }
 
@@ -140,7 +113,8 @@ footer {
 /*** Navigation ***/
 nav {
   background-color: darkred;
-  font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", $safeFonts;
+  /* Use of Extend */
+  @extend %heading-fonts;
 
   ul {
     margin: 0;
