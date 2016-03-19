@@ -21,18 +21,18 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin-bottom: -3em;
+  margin-bottom: -54px;
 }
 /* line 18, ../../../../../../../../../opt/chef/embedded/lib/ruby/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
 .wrapper .wrapper-footer {
-  height: 3em;
+  height: 54px;
 }
 
 /* line 20, ../../../../../../../../../opt/chef/embedded/lib/ruby/gems/1.9.1/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
 .footer {
   clear: both;
   position: relative;
-  height: 3em;
+  height: 54px;
 }
 
 /*** Main Styles ***/

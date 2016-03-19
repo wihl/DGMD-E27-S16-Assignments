@@ -15,7 +15,9 @@
 
 // TODO: Use one more Sass function
 
-@include sticky-footer(3em, ".wrapper",".wrapper-footer", ".footer");
+// TODO : get sticky footer to work AGAIN!!!
+
+@include sticky-footer(54px, ".wrapper",".wrapper-footer", ".footer");
 
 /*** Main Styles ***/
 html {
