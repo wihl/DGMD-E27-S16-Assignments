@@ -2,6 +2,7 @@
 
 /* Compass Imports */
 @import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
 
 /* Partials */
 @import "chanceme/variables";
@@ -13,7 +14,7 @@
 
 // TODO: Use two Sass functions such as opaque or transparent colors
 
-// TODO: Use three compass mixins (such as sticky footer)
+// TODO: Use one more compass mixin (such as sticky footer)
 
 
 /*** Main Styles ***/
@@ -90,16 +91,22 @@ footer {
     display: inline-block;
     vertical-align: top;
     margin-right: 0.5em;
-    @include single-text-shadow;
+    /* Compass text-shadow */
+    @include text-shadow(rgba($shadowColor, 0.2) 1px 1px 0, rgba($shadowColor, 0.2) 1px 1px 0, rgba($shadowColor, 0.2) 2px 2px 0);
   }
 
   li {
     list-style: none;
     // Nesting - 2 level
+    select {
+      @include box-shadow($shadowColor 1px 1px 3px);
+    }
     &::after {
-        @include row-after;
+      @include row-after;
     }
   }
+
+
 }
 
 .panel-heading {
@@ -118,6 +125,10 @@ footer {
   text-align: center;
   margin-top: 1em;
   padding: 0.25em;
+
+  button {
+    @include box-shadow($shadowColor 2px 5px 10px);
+  }
 }
 
 /*** Navigation ***/

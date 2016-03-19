@@ -11,23 +11,23 @@ h3, h1, label, button, nav {
 }
 
 /*** Main Styles ***/
-/* line 20, ../sass/chanceme.scss */
+/* line 21, ../sass/chanceme.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 24, ../sass/chanceme.scss */
+/* line 25, ../sass/chanceme.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 28, ../sass/chanceme.scss */
+/* line 29, ../sass/chanceme.scss */
 body {
   font-size: 100%;
   font-family: "palatino linotype", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 38, ../sass/chanceme.scss */
+/* line 39, ../sass/chanceme.scss */
 h1 {
   color: black;
   margin-left: auto;
@@ -36,7 +36,7 @@ h1 {
   width: 66%;
 }
 
-/* line 47, ../sass/chanceme.scss */
+/* line 48, ../sass/chanceme.scss */
 .wrapper {
   width: 97%;
   max-width: 1200px;
@@ -45,25 +45,25 @@ h1 {
   background-color: #fff;
 }
 
-/* line 55, ../sass/chanceme.scss */
+/* line 56, ../sass/chanceme.scss */
 h3, h1 {
   font-weight: bold;
   margin-top: 1em;
   margin-bottom: 0;
 }
 
-/* line 61, ../sass/chanceme.scss */
+/* line 62, ../sass/chanceme.scss */
 .wrapper {
   /* For non-"picture" images */
 }
-/* line 63, ../sass/chanceme.scss */
+/* line 64, ../sass/chanceme.scss */
 .wrapper img {
   height: auto;
   display: block;
   /* If / else with default values */
   width: auto;
 }
-/* line 68, ../sass/chanceme.scss */
+/* line 69, ../sass/chanceme.scss */
 .wrapper .img-responsive {
   height: auto;
   display: block;
@@ -72,7 +72,7 @@ h3, h1 {
   width: 100%;
 }
 
-/* line 73, ../sass/chanceme.scss */
+/* line 74, ../sass/chanceme.scss */
 footer {
   clear: both;
   padding: 2em 0;
@@ -82,38 +82,45 @@ footer {
 }
 
 /*** Panel ***/
-/* line 82, ../sass/chanceme.scss */
+/* line 83, ../sass/chanceme.scss */
 .panel {
   font-size: 0.9em;
 }
-/* line 85, ../sass/chanceme.scss */
+/* line 86, ../sass/chanceme.scss */
 .panel .fieldset {
   margin-bottom: 0.7em;
 }
-/* line 89, ../sass/chanceme.scss */
+/* line 90, ../sass/chanceme.scss */
 .panel label {
   display: inline-block;
   vertical-align: top;
   margin-right: 0.5em;
-  text-shadow: 0px 0px 1px #aaaaaa;
+  /* Compass text-shadow */
+  text-shadow: rgba(220, 20, 60, 0.2) 1px 1px 0, rgba(220, 20, 60, 0.2) 1px 1px 0, rgba(220, 20, 60, 0.2) 2px 2px 0;
 }
-/* line 96, ../sass/chanceme.scss */
+/* line 98, ../sass/chanceme.scss */
 .panel li {
   list-style: none;
 }
-/* line 99, ../sass/chanceme.scss */
+/* line 101, ../sass/chanceme.scss */
+.panel li select {
+  -moz-box-shadow: crimson 1px 1px 3px;
+  -webkit-box-shadow: crimson 1px 1px 3px;
+  box-shadow: crimson 1px 1px 3px;
+}
+/* line 104, ../sass/chanceme.scss */
 .panel li::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 105, ../sass/chanceme.scss */
+/* line 112, ../sass/chanceme.scss */
 .panel-heading {
   background-color: black;
 }
 
-/* line 109, ../sass/chanceme.scss */
+/* line 116, ../sass/chanceme.scss */
 .panel-title {
   color: white;
   text-align: center;
@@ -122,27 +129,33 @@ footer {
   background-color: black;
 }
 
-/* line 117, ../sass/chanceme.scss */
+/* line 124, ../sass/chanceme.scss */
 .panel-footer {
   text-align: center;
   margin-top: 1em;
   padding: 0.25em;
 }
+/* line 129, ../sass/chanceme.scss */
+.panel-footer button {
+  -moz-box-shadow: crimson 2px 5px 10px;
+  -webkit-box-shadow: crimson 2px 5px 10px;
+  box-shadow: crimson 2px 5px 10px;
+}
 
 /*** Navigation ***/
-/* line 124, ../sass/chanceme.scss */
+/* line 135, ../sass/chanceme.scss */
 nav {
   background-color: darkred;
   /* Use of Extend */
 }
-/* line 129, ../sass/chanceme.scss */
+/* line 140, ../sass/chanceme.scss */
 nav ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
   overflow: auto;
 }
-/* line 135, ../sass/chanceme.scss */
+/* line 146, ../sass/chanceme.scss */
 nav ul a {
   color: #fff;
   text-decoration: none;
@@ -152,67 +165,67 @@ nav ul a {
   padding-bottom: 0.75em;
   float: left;
 }
-/* line 147, ../sass/chanceme.scss */
+/* line 158, ../sass/chanceme.scss */
 nav ul a:hover {
   color: #a16100;
 }
 
 /*** Grid system - 6 columns ***/
-/* line 156, ../sass/chanceme.scss */
+/* line 167, ../sass/chanceme.scss */
 .row::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 159, ../sass/chanceme.scss */
+/* line 170, ../sass/chanceme.scss */
 [class*='col-'] {
   margin-left: 4%;
   float: left;
   min-height: 1px;
 }
 
-/* line 165, ../sass/chanceme.scss */
+/* line 176, ../sass/chanceme.scss */
 .col-1 {
   width: 12%;
 }
 
-/* line 168, ../sass/chanceme.scss */
+/* line 179, ../sass/chanceme.scss */
 .col-2 {
   width: 28%;
 }
 
-/* line 171, ../sass/chanceme.scss */
+/* line 182, ../sass/chanceme.scss */
 .col-3 {
   width: 44%;
 }
 
-/* line 174, ../sass/chanceme.scss */
+/* line 185, ../sass/chanceme.scss */
 .col-4 {
   width: 60%;
 }
 
-/* line 177, ../sass/chanceme.scss */
+/* line 188, ../sass/chanceme.scss */
 .col-5 {
   width: 76%;
 }
 
-/* line 180, ../sass/chanceme.scss */
+/* line 191, ../sass/chanceme.scss */
 .col-6 {
   width: 92%;
 }
 
-/* line 183, ../sass/chanceme.scss */
+/* line 194, ../sass/chanceme.scss */
 .col-offset-1 {
   margin-left: 20%;
 }
 
-/* line 186, ../sass/chanceme.scss */
+/* line 197, ../sass/chanceme.scss */
 .col-offset-2 {
   margin-left: 36%;
 }
 
-/* line 189, ../sass/chanceme.scss */
+/* line 200, ../sass/chanceme.scss */
 .col-offset-3 {
   margin-left: 52%;
 }
@@ -220,54 +233,54 @@ nav ul a:hover {
 /*** Media queries ***/
 /* Small mobile portrait Screen Sizes */
 @media only screen and (max-width: 479px) {
-  /* line 197, ../sass/chanceme.scss */
+  /* line 208, ../sass/chanceme.scss */
   [class*='col-'] {
     width: 100%;
     float: none;
     margin-left: 0;
   }
 
-  /* line 202, ../sass/chanceme.scss */
+  /* line 213, ../sass/chanceme.scss */
   .col-4-6 {
     width: 100%;
   }
 }
 /* Medium screen width for larger phones and tablets */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 211, ../sass/chanceme.scss */
+  /* line 222, ../sass/chanceme.scss */
   .col-1,
   .col-2,
   .col-3 {
     width: 44%;
   }
 
-  /* line 216, ../sass/chanceme.scss */
+  /* line 227, ../sass/chanceme.scss */
   .col-4,
   .col-5,
   .col-6 {
     width: 92%;
   }
 
-  /* line 222, ../sass/chanceme.scss */
+  /* line 233, ../sass/chanceme.scss */
   .col-offset-1,
   .col-offset-2,
   .col-offset-3 {
     margin-left: 4%;
   }
 
-  /* line 227, ../sass/chanceme.scss */
+  /* line 238, ../sass/chanceme.scss */
   .col-4-6 {
     width: 92%;
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 234, ../sass/chanceme.scss */
+  /* line 245, ../sass/chanceme.scss */
   .col-4-6 {
     width: 60%;
   }
 }
 /*** Headers ***/
-/* line 240, ../sass/chanceme.scss */
+/* line 251, ../sass/chanceme.scss */
 header h1 {
   text-align: center;
   color: white;
@@ -276,13 +289,13 @@ header h1 {
 
 /* Small header */
 @media only screen and (max-width: 479px) {
-  /* line 247, ../sass/chanceme.scss */
+  /* line 258, ../sass/chanceme.scss */
   header {
     background: url(../img/gates-sm.jpg) no-repeat;
     width: 100%;
     height: 6em;
   }
-  /* line 251, ../sass/chanceme.scss */
+  /* line 262, ../sass/chanceme.scss */
   header h1 {
     padding: 0.75em;
     font-size: 1.25em;
@@ -291,12 +304,12 @@ header h1 {
 }
 /* Medium header */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 261, ../sass/chanceme.scss */
+  /* line 272, ../sass/chanceme.scss */
   header {
     background: url(../img/gates-lg.jpg) no-repeat;
     height: 10em;
   }
-  /* line 264, ../sass/chanceme.scss */
+  /* line 275, ../sass/chanceme.scss */
   header h1 {
     padding: 1em;
     font-size: 1.4em;
@@ -305,12 +318,12 @@ header h1 {
 }
 /* Large header */
 @media only screen and (min-width: 768px) {
-  /* line 274, ../sass/chanceme.scss */
+  /* line 285, ../sass/chanceme.scss */
   header {
     background: url(../img/gates-lg.jpg) no-repeat;
     height: 12em;
   }
-  /* line 277, ../sass/chanceme.scss */
+  /* line 288, ../sass/chanceme.scss */
   header h1 {
     padding: 1.25em;
     font-size: 2em;
