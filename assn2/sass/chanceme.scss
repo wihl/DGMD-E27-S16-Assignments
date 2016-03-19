@@ -1,11 +1,20 @@
 /* DGMD E27, Assignment 2, David Wihl */
 
+/* Compass Imports */
+@import "compass/css3/text-shadow";
+
+/* Partials */
 @import "chanceme/variables";
 @import "chanceme/mixins";
 
+
+
 // TODO: create function to determine column widths
 
-// TODO: use opaque or transparent colors
+// TODO: Use two Sass functions such as opaque or transparent colors
+
+// TODO: Use three compass mixins (such as sticky footer)
+
 
 /*** Main Styles ***/
 html {
@@ -81,6 +90,7 @@ footer {
     display: inline-block;
     vertical-align: top;
     margin-right: 0.5em;
+    @include single-text-shadow;
   }
 
   li {
