@@ -1,8 +1,8 @@
-/* Mixins */
+// Custom Mixin
 @mixin img-defaults($imgtype: nonresponsive) {
   height: auto;
   display: block;
-  /* If / else with default values */
+  // If / else with default values
   @if $imgtype == nonresponsive {
     width: auto;
   } @else {
@@ -17,7 +17,7 @@
   clear:both;
 }
 
-/* Extend only class */
+// Extend only class
 %heading-fonts {
   font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", $safeFonts;
 }
