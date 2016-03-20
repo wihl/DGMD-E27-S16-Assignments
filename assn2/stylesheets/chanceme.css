@@ -297,7 +297,7 @@ header h1 {
 @media only screen and (max-width: 479px) {
   /* line 271, ../sass/chanceme.scss */
   header {
-    background: url('/assn2/img/gates-sm.jpg?1457474505');
+    background: url('/DGMD-E27-S16-Assignments/assn2/img/gates-sm.jpg?1457474505');
     width: 100%;
     height: 6em;
   }
@@ -312,7 +312,7 @@ header h1 {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   /* line 287, ../sass/chanceme.scss */
   header {
-    background: url('/assn2/img/gates-lg.jpg?1457474505');
+    background: url('/DGMD-E27-S16-Assignments/assn2/img/gates-lg.jpg?1457474505');
     height: 10em;
   }
   /* line 292, ../sass/chanceme.scss */
@@ -326,7 +326,7 @@ header h1 {
 @media only screen and (min-width: 768px) {
   /* line 302, ../sass/chanceme.scss */
   header {
-    background: url('/assn2/img/gates-lg.jpg?1457474505');
+    background: url('/DGMD-E27-S16-Assignments/assn2/img/gates-lg.jpg?1457474505');
     height: 12em;
   }
   /* line 307, ../sass/chanceme.scss */

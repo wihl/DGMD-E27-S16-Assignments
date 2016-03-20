@@ -2,7 +2,7 @@ require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "/assn2"
+http_path = "/DGMD-E27-S16-Assignments/assn2"
 css_dir = "stylesheets"
 sass_dir = "sass"
 images_dir = "img"
