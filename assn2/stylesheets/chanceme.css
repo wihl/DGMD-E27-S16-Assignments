@@ -163,8 +163,7 @@ nav ul {
 nav ul a {
   color: white;
   text-decoration: none;
-  text-shadow: 1px 1px 2px black;
-  text-shadow: 1px 1px 2px 2px black;
+  text-shadow: 1px 2px black #aaaaaa;
   padding-left: 1.5em;
   padding-top: 0.75em;
   padding-bottom: 0.75em;
@@ -289,8 +288,7 @@ nav ul a:hover {
 header h1 {
   text-align: center;
   color: white;
-  text-shadow: 2px 2px 5px black;
-  text-shadow: 2px 2px 5px 5px black;
+  text-shadow: 2px 5px black #aaaaaa;
 }
 
 /* Small header */
