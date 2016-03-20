@@ -1,0 +1,28 @@
+chanceme.scss:9:// Compass Imports
+chanceme.scss:14:// Sass Partials
+chanceme.scss:35:  // Sass extend
+chanceme.scss:40:  @extend h3; // chaining of extend
+chanceme.scss:63:  // Nesting - 1 level
+chanceme.scss:82:  // Use of Sass function #1
+chanceme.scss:90:  // Compass box-shadow
+chanceme.scss:93:  // Nesting
+chanceme.scss:102:    // Compass text-shadow
+chanceme.scss:108:    // Nesting - 2 level
+chanceme.scss:110:      // Compass again
+chanceme.scss:136:  // Sass Nesting
+chanceme.scss:138:    // Compass box-shadow
+chanceme.scss:146:  // Use of Extend
+chanceme.scss:156:      // Sass function #2
+chanceme.scss:159:      // Compass single text shadow
+chanceme.scss:161:      // Nesting - 3 levels
+chanceme.scss:265:  // Compass single text shadow
+chanceme.scss:272:    // Compass image
+chanceme.scss:276:    // Sass Nesting
+chanceme.scss:288:    // Compass image
+chanceme.scss:291:    // Sass Nesting
+chanceme.scss:303:    // Compass image
+chanceme.scss:306:    // Sass Nesting
+chanceme/_mixins.scss:1:// Custom Mixin
+chanceme/_mixins.scss:5:  // If / else with default values
+chanceme/_mixins.scss:20:// Extend only class
+chanceme/_variables.scss:1:// Sass Variables
