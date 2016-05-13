@@ -52,4 +52,4 @@ The manipulation of an **internal SVG element** is done by hovering the inner tr
 
 ## Thank You!
 
-It's been a great class. I tremendous amount and will certainly recommend the class to others in the future.
+It's been a great class. I learned a tremendous amount and will certainly recommend the class to others in the future.

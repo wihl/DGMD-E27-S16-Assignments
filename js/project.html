@@ -1,0 +1,444 @@
+<html>
+
+<head>
+  <title>CSCI E-3 Final Project by David Wihl</title>
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    body {
+      font-family: 'Crimson-Text', sans-serif;
+    }
+
+    canvas {
+      border: 1px solid;
+    }
+
+    #prooftext {
+      width: 40%;
+      float: right;
+    }
+
+    .sqrt {
+      white-space: nowrap;
+    }
+
+    .radicand {
+      text-decoration:overline;
+    }
+
+    h1,
+    h3 {
+      text-align: center;
+    }
+
+    footer {
+      position: absolute;
+      width: 100%;
+      clear: both;
+      padding: 2em 0;
+      margin-top: 1em;
+      color: #999;
+      font-size: 0.8em;
+      background-color: lightgray;
+      text-align: center;
+    }
+
+    ol {
+      list-style-type: lower-greek;
+    }
+  </style>
+
+  <body>
+    <h1>SmartDrawing</h1>
+    <h3>A Smarter JavaScript Interface for &lt;canvas&gt;</h3>
+    <p>
+      This project creates a SmartDrawing object to wrap the basic HTML canvas object. The canvas object has a number of limitations:
+    </p>
+    <ol>
+      <li>The coordinate system is unintuitive. SmartDraw sets the origin (0,0) to be in the center of the canvas, with positive y going up vertically like a typical Cartesian coordinate system.
+      </li>
+      <li>
+        The canvas and context are invalidated upon resize. SmartDraw automatically handles resize events and keeps the drawing intact.
+      </li>
+      <li>The canvas JavaScript API is quite low-level, with many extra parameters. SmartDraw has a simple language for drawing common elements:
+        <ul>
+          <li>point(x,y)</li>
+          <li>label(x,y,string)</li>
+          <li>line(x1,y1,x2,y2)</li>
+          <li>circle(x,y,r)</li>
+        </ul>
+      </li>
+    </ol>
+    <p>The API is straightforward:
+      <pre>
+          var d = new SmartDraw(&lt;id of canvas element&gt;);
+          d.draw(action);
+        </pre> where <i>action</i> is one of the items above, e.g.
+      <pre>
+          d.draw("line(0,0,20,20)");
+        </pre>
+    </p>
+    <p>The following project requirements have been met:
+      <ol>
+        <li>DOM element creation, deletion or modification</li>
+        <li>DOM traversal</li>
+        <li>Capturing and handling events. There is a fancy resize handler.</li>
+        <li>Creating and handling a data structure (JSON, custom objects, etc)</li>
+        <li>Closures</li>
+      </ol>
+    </p>
+    <p>Possibilities for future work:
+      <ul>
+        <li>Autoscale drawing based on screen size.</li>
+        <li>Read the list of Euclid's items from JSON</li>
+        <li>Permit animation of line drawing.</li>
+        <li>Better robustness of command parsing.</li>
+        <li>Use symbolic points (e.g. A=(0,1), B=(2,3), line(A,B))</li>
+        <li>... and many other ideas!</li>
+      </ul>
+    </p>
+    <p>In order to illustrate SmartDrawing's capabilities, I created a small UI to show a small selection of Euclid's proofs from
+      <a href="http://aleph0.clarku.edu/~djoyce/elements/bookI/propI1.html">Elements</a>.
+    </p>
+    <p>To start, select an item, then use the '>' next button to advance to the next step in the proof, or '>>' to fast-forward to the end:</p>
+    <br>
+    <select id="postulate">
+      <option value="----">Choose a Euclidean Item</option>
+      <option value="I.1">I.1 To construct an equilateral triangle on a given finite straight line</option>
+      <option value="VI.3">VI Definition 3 - Extreme and Mean (Golden) Ratio</option>
+      <option value="SQRT3">Find the Square Root of 3 by Geometry</option>
+    </select>
+
+    <div id="canvasDiv">
+      <canvas id="proof"></canvas>
+      <div id="prooftext"></div>
+      <br>
+      <button type="button" id="forward">></button>
+      <button type="button" id="fastforward">>></button>
+      <button type="button" id="clear">Clear</button>
+    </div>
+
+    <footer>
+      David Wihl, CSCI E3, Spring 2016
+    </footer>
+    <script>
+
+      // Create SmartDraw instance
+      var d = new SmartDraw("proof");
+
+      var textDiv = document.getElementById('prooftext');
+      var actionLabel = 0;
+      var currentAction = 0;
+      var currentPostulate = "";
+
+      // List of proofs and drawing actions
+      var elements = {
+        // Equilateral triangle
+        "I.1": [{
+          text: "",
+          action: "label(5,-10,A)"
+        }, {
+          text: "Create Point A",
+          action: "point(0,0)"
+        }, {
+          text: "",
+          action: "label(105,-10,B)"
+        }, {
+          text: "Create Point B",
+          action: "point(100,0)"
+        }, {
+          text: "Create line AB",
+          action: "line(0,0,100,0)"
+        }, {
+          text: "Create Circle center A, radius AB",
+          action: "circle(0,0,100)"
+        }, {
+          text: "Create Circle center B, radius AB",
+          action: "circle(100,0,100)"
+        }, {
+          text: "",
+          action: "label(47,70,C)"
+        }, {
+          text: "Circles intersect at C",
+          action: "point(50,86.6)"
+        }, {
+          text: "",
+          action: "line(0,0,50,86.6)"
+        }, {
+          text: "Triangle ABC is equilateral",
+          action: "line(50,86.6,100,0)"
+        }],
+
+        // Golden Ratio
+        "VI.3": [{
+          text: "",
+          action: "label(-105,-10,A)"
+        }, {
+          text: "Create Point A",
+          action: "point(-100,0)"
+        }, {
+          text: "",
+          action: "label(105,-10,B)"
+        }, {
+          text: "Create Point B",
+          action: "point(100,0)"
+        }, {
+          text: "Create line AB",
+          action: "line(-100,0,100,0)"
+        }, {
+          text: "",
+          action: "label(37.4,-10,C)"
+        }, {
+          text: "Create point C s.t. AB:AC = AC:CB. This is the golden ratio.",
+          action: "point(32.4,0)"
+        }, ],
+
+        // Length of the sqrt of an arbitrary integer
+        "SQRT3": [{
+            text: "",
+            action: "label(-98,-60,B)"
+          }, {
+            text: "",
+            action: "point(-100,-50)"
+          }, {
+            text: "",
+            action: "label(2,-60,A)"
+          }, {
+            text: "",
+            action: "point(0,-50)"
+          }, {
+            text: "Create line AB of length 1",
+            action: "line(-100,-50,0,-50)"
+          }, {
+            text: "",
+            action: "point(-100,50)"
+          }, {
+            text: "",
+            action: "label(-110,40,C)"
+          }, {
+            text: "Create line BC of length 1 perpendicular to AB",
+            action: "line(-100,-50,-100,50)"
+          },
+
+          {
+            text: "Hypotenuse AC is of length <span class='sqrt'>&radic;<span class='radicand'>&nbsp;2&nbsp;</span></span>",
+            action: "line(-100,50,0,-50)"
+          }, {
+            text: "",
+            action: "label(-24,125,D)"
+          }, {
+            text: "Create line CD of length 1 perpendicular to AC",
+            action: "line(-100,50,-29.3,120.1)"
+          },
+
+          {
+            text: "Hypotenuse AD is of length <span class='sqrt'>&radic;<span class='radicand'>&nbsp;3&nbsp;</span></span>.<br><br>" +
+            " Any other length (e.g. <span class='sqrt'>&radic;<span class='radicand'>&nbsp;11&nbsp;</span></span>) can be found by continuing around.",
+            action: "line(-29.3,120.1,0,-50)"
+          },
+
+
+        ]
+      }
+
+      // Traversal functions
+      function nextAction() {
+        // Run all unlabeled actions
+        while (currentAction < currentPostulate.length &&
+          currentPostulate[currentAction].text == "") {
+          d.draw(currentPostulate[currentAction].action);
+          currentAction++;
+        }
+        // If there are no more actions, return
+        if (currentAction >= currentPostulate.length) return;
+
+        // This must be a labeled action, so display the label
+        actionLabel++;
+        textDiv.innerHTML +=
+          actionLabel + ": " + currentPostulate[currentAction].text + "<BR>";
+        d.draw(currentPostulate[currentAction].action);
+        currentAction++;
+      }
+
+      // EVENTS
+      // UI buttons
+      // Postulate drop down
+      document.getElementById('postulate').addEventListener("change", function() {
+        if (this.value in elements) {
+          actionLabel = 0;
+          currentAction = 0;
+          textDiv.innerHTML = "";
+          d.clear();
+          currentPostulate = elements[this.value];
+          nextAction();
+        } else {
+          alert("Please enter a valid postulate");
+          currentPostulate = "";
+        }
+      }, false);
+
+      // Forward button
+      document.getElementById('forward').addEventListener("click", function() {
+        if (currentPostulate != "") {
+          nextAction();
+        }
+      }, false);
+
+      // Fastforward button
+      document.getElementById('fastforward').addEventListener("click", function() {
+        if (currentPostulate != "") {
+          for (var i = currentAction; i < currentPostulate.length; i++) {
+            nextAction();
+          }
+        }
+      }, false);
+
+      // Clear button
+      document.getElementById('clear').addEventListener("click", function() {
+        actionLabel = 0;
+        currentAction = 0;
+        textDiv.innerHTML = "";
+        d.clear();
+      })
+
+      /****** CUT HERE TO PUT IN A SEPARATE smartdraw.js FILE ******/
+      // SmartDraw Object
+      function SmartDraw(canvasId) {
+        this.WINDOWPCT = 0.55; // canvas up x% of window
+        this.ASPECT = 0.5; // Aspect ratio: canvas height = x * width
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        this.canvas.width = window.innerWidth * this.WINDOWPCT; // 40% of width
+        this.canvas.height = this.canvas.width * this.ASPECT;
+        this.width = this.ctx.canvas.width;
+        this.height = this.ctx.canvas.height;
+        this.animate = true;
+        this.minX = 0;
+        this.maxX = this.width;
+        this.maxY = this.height;
+        this.minY = 0;
+        // move the origin to the center of the canvas
+        this.ctx.translate(this.width / 2, this.height / 2);
+
+        // Maintain list of actions to be played back upon resize
+        this.actions = [];
+        var that = this;
+        // CSCIE3: Capturing and handling an event
+        window.addEventListener("resize", function() {
+          // CSCIE3: Closure example
+          that.canvas = document.getElementById(canvasId);
+          that.ctx = that.canvas.getContext('2d');
+          that.canvas.width = window.innerWidth * that.WINDOWPCT;
+          that.canvas.height = that.canvas.width * that.ASPECT;
+          that.width = that.ctx.canvas.width;
+          that.height = that.ctx.canvas.height;
+          // reset transform / translate
+          that.ctx.setTransform(1, 0, 0, 1, 0, 0);
+          that.ctx.translate(that.width / 2, that.height / 2);
+          // Replay actions
+          that.animate = false;
+          for (var i = 0; i < that.actions.length; i++) {
+            that._draw(that.actions[i]);
+          }
+          that.animate = true;
+        }, false);
+        return this;
+      }
+
+      SmartDraw.prototype.domain = function(minX, maxX) {
+        var d = this;
+        var ctx = this.ctx;
+        d.minX = minX;
+        d.maxX = maxX;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        this.ctx.translate(this.width / 2, this.height / 2);
+        this.ctx.scale(this.width / (this.maxX - this.minX), 1)
+      }
+
+      SmartDraw.prototype.range = function(minY, maxY) {
+        var d = this;
+        d.minY = minY;
+        d.maxY = maxY;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        this.ctx.translate(this.width / 2, this.height / 2);
+        this.ctx.scale(this.width / (maxX - minX), 1)
+      }
+
+      SmartDraw.prototype.clear = function() {
+        var d = this;
+        d.ctx.setTransform(1, 0, 0, 1, 0, 0);
+        d.ctx.clearRect(0, 0, d.width, d.height);
+        d.ctx.translate(d.width / 2, d.height / 2);
+        d.actions = [];
+      }
+
+      SmartDraw.prototype.draw = function(action) {
+        // keep list of actions so it can be replayed upon resize
+        this.actions.push(action);
+        this._draw(action);
+      }
+
+      SmartDraw.prototype._draw = function(action) {
+        var verb, args, tokens;
+        // remove trailing ')' via slice, and then verb and arguments
+        tokens = action.slice(0, -1).split("(");
+        verb = tokens[0].toLowerCase();
+        args = tokens[1].split(",");
+        switch (verb) {
+          case 'point':
+            if (args.length < 2) {
+              console.log("A point requires x and y values");
+              break;
+            }
+            this.drawPoint(parseFloat(args[0]), parseFloat(args[1]));
+            break;
+          case 'label':
+            this.drawLabel(parseFloat(args[0]), parseFloat(args[1]), args[2])
+            break;
+          case 'line':
+            this.drawLine(parseFloat(args[0]), parseFloat(args[1]),
+              parseFloat(args[2]), parseFloat(args[3]));
+            break;
+          case 'circle':
+            this.drawCircle(parseFloat(args[0]), parseFloat(args[1]), parseFloat(args[2]));
+            break;
+          case 'domain':
+            this.domain(parseFloat(args[0]), parseFloat(args[1]));
+            break;
+          case 'range':
+            this.range(parseFloat(args[0]), parseFloat(args[1]));
+            break;
+          default:
+            break;
+        }
+      }
+
+      SmartDraw.prototype.drawPoint = function(x, y) {
+        var ctx = this.ctx;
+        ctx.beginPath();
+        ctx.arc(x, -y, 1, 0, Math.PI * 2, false);
+        ctx.fill();
+      }
+
+      SmartDraw.prototype.drawLabel = function(x, y, text) {
+        var ctx = this.ctx;
+        var textWidth = ctx.measureText(text).width;
+        ctx.fillText(text, x, -y);
+      }
+
+      SmartDraw.prototype.drawLine = function(x1, y1, x2, y2) {
+        var ctx = this.ctx;
+        ctx.beginPath();
+        ctx.moveTo(x1, -y1);
+        ctx.lineTo(x2, -y2);
+        ctx.stroke();
+      }
+
+      SmartDraw.prototype.drawCircle = function(x, y, r) {
+        var ctx = this.ctx;
+        ctx.beginPath();
+        ctx.arc(x, -y, r, 0, Math.PI * 2, false);
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
