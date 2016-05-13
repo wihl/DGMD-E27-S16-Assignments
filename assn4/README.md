@@ -44,13 +44,13 @@ I took [CS171](http://www.cs171.org/2016/index.html) this semester which had a l
 
 See [http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/animatesvg/index.html](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/animatesvg/index.html)
 
-Enable the **3D transformations** by clicking on the "3D Transform" checkbox.
+Enable the **3D transformations** by clicking on the "3D Transform" checkbox (lines 63-71, 202-203).
 
-A **one second** color transition appears when hovering over any of the gears.
+A **one second** color transition appears when hovering over any of the gears (lines 22-56).
 
-**Keyframe animation** is used twice for the counter-rotating gears in the 3D transformation.
+**Keyframe animation** is used twice for the counter-rotating gears in the 3D transformation (lines 73-81).
 
-The manipulation of an **internal SVG element** is done by hovering the inner triangle. See lines 159-164 in `index.html`.
+The manipulation of an **internal SVG element** is done by hovering the inner triangle (lines 159-164).
 
 ## Thank You!
 
