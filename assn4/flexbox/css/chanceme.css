@@ -1,4 +1,4 @@
-/* DGMD E27, Assignment 4 - Part A, Flexbox, David Wihl */
+/* DGMD E27, Assignment 4 - Part B, Flexbox, David Wihl */
 
 /*** Main Styles ***/
 html {
@@ -66,12 +66,6 @@ footer {
 /*** Panel ***/
 .panel {
   font-size: 0.9em;
-/*
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: stretch;
-*/
 }
 
 .panel-heading {
@@ -96,6 +90,7 @@ footer {
   margin-bottom: 0.7em;
 }
 
+/* Nested flexbox for form elements */
 .panel ul {
   display: flex;
   flex-direction: column;
@@ -113,13 +108,7 @@ footer {
 .panel li {
   list-style: none;
 }
-/*
-.panel li::after {
-    content:"";
-    display: table;
-    clear:both;
-}
-*/
+
 
 
 
@@ -168,7 +157,7 @@ nav ul a:hover {
   padding-right: 0.5rem;
 }
 
-/*** Media queries ***/
+/*** Media queries including Flexbox ***/
 
 /* Small mobile portrait Screen Sizes */
 @media only screen and (max-width: 479px) {

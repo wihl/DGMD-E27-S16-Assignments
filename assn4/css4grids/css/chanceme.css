@@ -24,6 +24,8 @@ h1 {
 h3, label, button {
     font-family: "Roboto", "League Spartan", "Avenir Black", "futura_md_btbold", "Arial", "sans-serif";
 }
+
+/* CSS4 grid, 6 column */
 .wrapper {
     width: 97%;
     max-width: 1200px;
@@ -35,6 +37,7 @@ h3, label, button {
     padding-left: 40px;
     grid-auto-flow: row;
 }
+
 h3 {
     font-weight: bold;
     margin-top: 1em;
