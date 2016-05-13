@@ -162,9 +162,6 @@ article {
 /* Small mobile portrait Screen Sizes */
 
 @media only screen and (max-width: 479px) {
-    article {
-        grid-column: 1 / 7;
-    }
     .wrapper {
         grid-column-gap: 5px;
         padding-left: 0px;

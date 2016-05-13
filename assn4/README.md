@@ -18,7 +18,7 @@ The screenshot can be found in `flexbox/FroggyScreenShot.png`
 
 The website for flexbox can be found in the `flexbox` directory.
 
-All three pages (index, How It Works and Test Page) all use Flex.
+All three pages (index, How It Works and Test Page) all use Flex and share a common style sheet.
 
 The public URL can be found at
 
@@ -32,7 +32,9 @@ The public URL can be found at
 
 [http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/)
 
-I used CSS4 auto flows to avoid having to specify precise row / column position for every element on the grid. This also allowed Bootstrap-type `col-` selectors. See the [Test page](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/testpage.html).
+I used CSS4 auto flows to avoid having to specify precise row / column position for every element on the grid. This also allowed Bootstrap-type `col-` selectors including offsets and right justification. See the [Test page](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/testpage.html).
+
+All three pages use CSS4 and share a common style sheet.
 
 ## Part 3 - CSS Animation and SVG
 
