@@ -36,6 +36,12 @@ I used CSS4 auto flows to avoid having to specify precise row / column position 
 
 All three pages use CSS4 and share a common style sheet.
 
+Grid reordering is demonstrated in `testpage.html` line 183 and `css/chanceme.css` line 152.
+
+There seems to be a bug in CSS4 in small mobile portrait (px < 480), as responsiveness
+no longer works. This did work earlier so I'm not sure if the version of Chrome
+Google released on May 11 changed anything.
+
 ## Part 3 - CSS Animation and SVG
 
 I took [CS171](http://www.cs171.org/2016/index.html) this semester which had a large emphasis on D3 / SVG. So I combined an animated D3 / SVG [example](http://bl.ocks.org/mbostock/1353700) and added appropriate CSS Transitions and Animations.

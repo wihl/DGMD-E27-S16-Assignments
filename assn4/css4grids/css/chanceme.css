@@ -147,6 +147,11 @@ article {
     grid-column: span 4;
 }
 
+/* Changing order explicitly */
+.moveup {
+  grid-row: 1;
+}
+
 /* right aligned column */
 
 .col-r {
