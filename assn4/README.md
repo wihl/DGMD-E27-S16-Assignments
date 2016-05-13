@@ -20,17 +20,13 @@ The website for flexbox can be found in the `flexbox` directory.
 
 All three pages (index, How It Works and Test Page) all use Flex and share a common style sheet.
 
-The public URL can be found at
-
-[http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/flexbox/](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/flexbox/)
+The public URL can be found at [http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/flexbox/](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/flexbox/)
 
 Flexbox is used for the overall page layout and the grid system. There is also a nested flexbox on the index page for the form elements.
 
 ## Part 2 - CSS4 Grids
 
-The public URL can be found at
-
-[http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/)
+The public URL can be found at [http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/)
 
 I used CSS4 auto flows to avoid having to specify precise row / column position for every element on the grid. This also allowed Bootstrap-type `col-` selectors including offsets and right justification. See the [Test page](http://wihl.github.io/DGMD-E27-S16-Assignments/assn4/css4grids/testpage.html).
 
